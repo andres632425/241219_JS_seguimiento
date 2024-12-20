@@ -6,14 +6,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <img id="imagen" src="../imagenes/lekumberri-navarra.jpg" alt="">
-    <button>CAMBIAR</button>
+    <button id="btn1">CAMBIAR</button>
 </head>
 <body>
-    
+      
+
+<script>
+// Decaracion de objetos y variables
+const miImagen=document.getElementById("imagen");
+const boton=document.querySelector("#btn1");
+
+
+// Eventos y funciones
+miImagen.addEventListener("mouseover", entrar );
+
+
+function entrar(){
+
+miImagen.setAttribute("src","../imagenes/ujue-navarra.jpg");
+
+}
+
+
+miImagen.addEventListener("mouseout", salir );
+
+
+function salir(){
+      
+      miImagen.setAttribute("src","../imagenes/lekumberri-navarra.jpg");
+
+}
+
+
+// Evento del boton
+
+boton.addEventListener("click", interruptor);
+
+function interruptor(){
+
+    let imagenObtenida=miImagen.getAttribute("src");
+
+   if(imagenObtenida=="../imagenes/lekumberri-navarra.jpg"){
+
+    miImagen.setAttribute("src","../imagenes/ujue-navarra.jpg");
+
+   } else {
+
+     miImagen.setAttribute("src","../imagenes/lekumberri-navarra.jpg");
+
+   }
+
+   //alert(imagenObtenida);
+
+   
+
+   
+
+
+};
 
 
 
 
-    
+</script>
 </body>
 </html>
