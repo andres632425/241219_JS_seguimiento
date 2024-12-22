@@ -1,73 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <img id="imagen" src="../imagenes/lekumberri-navarra.jpg" alt="">
+    <img id="imagen" src="../imagenes/lekumberri-navarra.jpg" alt="" />
     <button id="btn1">CAMBIAR</button>
-</head>
-<body>
-      
+  </head>
+  <body>
+    <script>
+      // Decaracion de objetos y variables
+      const miImagen = document.getElementById("imagen");
+      const boton = document.querySelector("#btn1");
 
-<script>
-// Decaracion de objetos y variables
-const miImagen=document.getElementById("imagen");
-const boton=document.querySelector("#btn1");
+      // Eventos y funciones
+      miImagen.addEventListener("mouseover", entrar);
 
+      function entrar() {
+        miImagen.setAttribute("src", "../imagenes/ujue-navarra.jpg");
+      }
 
-// Eventos y funciones
-miImagen.addEventListener("mouseover", entrar );
+      miImagen.addEventListener("mouseout", salir);
 
+      function salir() {
+        miImagen.setAttribute("src", "../imagenes/lekumberri-navarra.jpg");
+      }
 
-function entrar(){
+      // Evento del boton
 
-miImagen.setAttribute("src","../imagenes/ujue-navarra.jpg");
+      boton.addEventListener("click", interruptor);
 
-}
+      function interruptor() {
+        let imagenObtenida = miImagen.getAttribute("src");
 
+        if (imagenObtenida == "../imagenes/lekumberri-navarra.jpg") {
+          miImagen.setAttribute("src", "../imagenes/ujue-navarra.jpg");
+        } else {
+          miImagen.setAttribute("src", "../imagenes/lekumberri-navarra.jpg");
+        }
 
-miImagen.addEventListener("mouseout", salir );
-
-
-function salir(){
-      
-      miImagen.setAttribute("src","../imagenes/lekumberri-navarra.jpg");
-
-}
-
-
-// Evento del boton
-
-boton.addEventListener("click", interruptor);
-
-function interruptor(){
-
-    let imagenObtenida=miImagen.getAttribute("src");
-
-   if(imagenObtenida=="../imagenes/lekumberri-navarra.jpg"){
-
-    miImagen.setAttribute("src","../imagenes/ujue-navarra.jpg");
-
-   } else {
-
-     miImagen.setAttribute("src","../imagenes/lekumberri-navarra.jpg");
-
-   }
-
-   //alert(imagenObtenida);
-
-   
-
-   
-
-
-};
-
-
-
-
-</script>
-</body>
+        //alert(imagenObtenida);
+      }
+    </script>
+  </body>
 </html>
