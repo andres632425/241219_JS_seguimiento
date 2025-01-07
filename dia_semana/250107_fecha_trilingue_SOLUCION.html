@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Mes en curso</title>
+  </head>
+  <body>
+    <select id="selector">
+      <option value="nada">Elegir Opcion</option>
+      <option value="castellano">Castellano</option>
+      <option value="euskera">Euskera</option>
+      <option value="ingles">English</option>
+    </select>
+
+    <p id="demo"></p>
+
+    <script>
+
+                      const listado=document.getElementById("selector");
+                      const mensaje=document.getElementById("demo");
+
+
+
+
+                      listado.addEventListener("change", function(){
+
+                  var diaSemana = new Date().getDay();
+                 // alert(diaSemana);
+
+                  var castellano = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+                  var euskera = ["Igandea", "Astelehena", "Asteartea", "Asteazkena", "Osteguna", "Ostirala", "Larunbata"];
+                  var ingles = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                 // var idioma = document.getElementById("selector").value;
+                 var idioma=listado.value;
+                
+
+                 var resultado="";
+
+                      switch (idioma){
+
+                      case "castellano": 
+
+                     resultado+=castellano[diaSemana];
+                      break;
+
+                      case "euskera":  
+                      resultado+=euskera[diaSemana];
+
+                      break;
+                      case "ingles":     
+                      resultado+=ingles[diaSemana];
+
+                      break;
+                      default: alert("Hay que elegir un valor")
+
+                  }
+                  
+                    
+                  mensaje.innerHTML=resultado;
+
+          });
+   
+    </script>
+  </body>
+</html>
